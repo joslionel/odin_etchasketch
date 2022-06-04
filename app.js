@@ -49,18 +49,20 @@ function makeGrid(size) {
 
 function changeColour(c) {
     const pixels = document.querySelectorAll('div.square');
-    color = c;
-    if (color != 'random') {pixels.forEach(pixel => {
-        pixel.addEventListener('mouseover', changeBackground = () => {pixel.setAttribute('style', `background-color: ${color}`)});
-    });} else if (color == 'random')  {
+    console.log(c)
+    if (c == 'random') {
             pixels.forEach(pixel => {
                 pixel.addEventListener('mouseover', changeBackground = () => {
                     color = getRandomColor();
                     pixel.setAttribute('style', `background-color: ${color}`)
                 })
-            })
+            })} else {
+                {pixels.forEach(pixel => {
+                    pixel.addEventListener('mouseover', changeBackground = () => {pixel.setAttribute('style', `background-color: ${c}`)});
+                });}
+            }
             
-        };
+        ;
 }
 
 
